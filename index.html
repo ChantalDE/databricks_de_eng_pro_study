@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive four-week Databricks Data Engineer Professional certification study tracker." />
+  <title>Lakehouse Pro Prep</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Study navigation">
+      <a class="brand" href="#dashboard" data-route="dashboard" aria-label="Lakehouse Pro Prep dashboard"><span class="brand-mark">LP</span><span><strong>Lakehouse</strong><small>Pro Prep</small></span></a>
+      <nav class="nav-list" id="navList"></nav>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div><p class="date-line" id="dateLine"></p><h1 id="viewTitle">Dashboard</h1></div><div class="top-actions"><button class="ghost-button" id="resetProgress" type="button">Reset</button><button class="primary-button" id="startPractice" type="button">Practice</button></div></header>
+      <section class="view is-active" id="dashboardView" aria-labelledby="dashboardHeading">
+        <div class="hero-panel"><div class="hero-copy"><p class="section-label">4-week plan</p><h2 id="dashboardHeading">One focused hour a day, tuned to your weak spots.</h2><p>Built for your Associate foundation: diagnose, study official Databricks docs, answer original practice questions, and keep moving toward exam readiness.</p></div><div class="hero-meter" aria-label="Overall readiness"><svg viewBox="0 0 140 140" role="img" aria-labelledby="meterTitle"><title id="meterTitle">Overall readiness score</title><circle cx="70" cy="70" r="56" class="meter-track"></circle><circle cx="70" cy="70" r="56" class="meter-progress" id="readinessRing"></circle></svg><strong id="readinessScore">0%</strong><span>readiness</span></div></div>
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="dashboard-grid"><section class="panel today-panel"><div class="panel-heading"><div><p class="section-label">Today</p><h2 id="todayTitle">Study block</h2></div><span class="time-chip">60 min</span></div><div id="todayContent"></div><button class="primary-button full" id="completeToday" type="button">Mark today complete</button></section><section class="panel"><div class="panel-heading"><div><p class="section-label">Weak areas</p><h2>Next best review</h2></div></div><div class="weak-list" id="weakList"></div></section></div>
+        <section class="panel wide-panel"><div class="panel-heading"><div><p class="section-label">Strength map</p><h2>Professional domains</h2></div><button class="ghost-button" type="button" data-route="topics">View all</button></div><div class="topic-strip" id="strengthMap"></div></section>
+      </section>
+      <section class="view" id="topicsView" aria-labelledby="topicsHeading"><div class="view-intro"><p class="section-label">Official docs</p><h2 id="topicsHeading">Topic-by-topic study map</h2><p>Each module is tied to Professional exam objectives and links only to official Databricks documentation or certification materials.</p></div><div class="filter-row" id="topicFilters"></div><div class="topic-grid" id="topicGrid"></div></section>
+      <section class="view" id="practiceView" aria-labelledby="practiceHeading"><div class="practice-layout"><section class="panel quiz-panel"><div class="panel-heading"><div><p class="section-label">Practice</p><h2 id="practiceHeading">Original doc-based questions</h2></div><span class="time-chip" id="quizCount">1 / 1</span></div><div id="quizCard"></div></section><aside class="panel practice-side"><p class="section-label">Quiz mode</p><div class="mode-list" id="quizModes"></div><div class="score-box"><span>Answered</span><strong id="answeredCount">0</strong></div><div class="score-box"><span>Accuracy</span><strong id="accuracyScore">0%</strong></div></aside></div></section>
+      <section class="view" id="planView" aria-labelledby="planHeading"><div class="view-intro"><p class="section-label">4-week plan</p><h2 id="planHeading">28 one-hour study blocks</h2><p>The sequence starts with build-and-ingest foundations, then pushes into operations, optimization, governance, deployment, modeling, and review.</p></div><div class="week-grid" id="weekGrid"></div></section>
+      <section class="view" id="docsView" aria-labelledby="docsHeading"><div class="view-intro"><p class="section-label">Documentation</p><h2 id="docsHeading">Official Databricks source list</h2><p>Use these as your canonical reading links. No third-party exam dumps, no mystery notes.</p></div><div class="docs-grid" id="docsGrid"></div></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./script.js"></script>
+</body>
+</html>
